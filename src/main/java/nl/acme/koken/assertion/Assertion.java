@@ -56,6 +56,6 @@ public class Assertion {
     }
 
     public static void equals(long expected, long actual) {
-        ensure(actual == expected, "Must be equal");
+        ensure(actual == expected, "expected: %d, actual: %d".formatted(expected, actual));
     }
 }
