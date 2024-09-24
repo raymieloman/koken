@@ -1,9 +1,13 @@
 package nl.acme.koken.trywithresources.exercise;
 
-import java.util.*;
+import lombok.Getter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class Drawer implements AutoCloseable {
     private Set<String> articles = new HashSet<>();
+    @Getter
     private boolean open = true;
 
     public void add(String name) {
@@ -11,16 +15,12 @@ public class Drawer implements AutoCloseable {
     }
 
     public int size() {
-        return articles.size();
+        return this.articles.size();
     }
 
     @Override
     public void close() {
         System.out.println("Drawer is successfully closed");
         open = false;
-    }
-
-    public boolean isOpen() {
-        return open;
     }
 }

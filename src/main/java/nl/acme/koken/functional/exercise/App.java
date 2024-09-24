@@ -24,6 +24,13 @@ public class App {
         for (Integer number : numbers) {
             System.out.printf("%d => %d%n", number, square.apply(number));
         }
+        for (Integer number : numbers) {
+            System.out.printf("%d => %d%n", number, squareAlternate.apply(number));
+        }
+
+        for (Integer number : numbers) {
+            System.out.printf("%d => %d%n", number, squareMod2.apply(number));
+        }
 
     }
 }

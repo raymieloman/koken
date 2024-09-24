@@ -20,7 +20,7 @@ public class Kitchen {
     }
 
     public static class KitchenBuilder {
-        private String gasfornuis;
+        private final String gasfornuis;
         private String kookstel;
         private Color color;
 

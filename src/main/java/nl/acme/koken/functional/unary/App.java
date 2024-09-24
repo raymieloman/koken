@@ -9,7 +9,7 @@ public class App {
         UnaryOperator<Integer> byTwo = x -> x * 2;
         BinaryOperator<Integer> mul = (x, y) -> x * y;
 
-
-
+        System.out.println(byTwo.apply(3));
+        System.out.println(mul.apply(3,2));
     }
 }

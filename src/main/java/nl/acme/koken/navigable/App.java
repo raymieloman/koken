@@ -15,8 +15,6 @@ public class App {
         treinTijden.add("1030");
         treinTijden.add("1045");
 
-        Assertion.require(!treinTijden.isEmpty()); // preconditie
-
         // Ik wil met de trein en het is nu 10:20
         String time = treinTijden.higher("1020");
         Assertion.equals("1030", time);

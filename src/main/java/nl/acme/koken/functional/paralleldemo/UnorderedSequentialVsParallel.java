@@ -1,10 +1,10 @@
 package nl.acme.koken.functional.paralleldemo;
 
-import java.util.List;
+import java.util.stream.Stream;
 
 public class UnorderedSequentialVsParallel {
     // See OCP-17 book page 765 before showing this example
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         System.out.println("Demo skip 5 from a serial or parallel stream");
         demoSkip5Serial();
         System.out.println();
@@ -19,20 +19,20 @@ public class UnorderedSequentialVsParallel {
     private static void demoSkip5Serial() {
         // stream().unordered keeps order (skip 5 skips first five elements)
         System.out.printf("%10s", "Serial: ");
-        List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15).stream().unordered().skip(5).forEach(System.out::print);
+        Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15).unordered().skip(5).forEach(System.out::print);
     }
 
     private static void demoSkip5Parallel() {
         // stream().unordered.parallel() might distort order (skip 5 skips five random elements)
         System.out.printf("%10s", "Parallel: ");
-        List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15).stream().unordered().parallel().skip(5).forEach(System.out::print);
+        Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15).unordered().parallel().skip(5).forEach(System.out::print);
     }
 
     // unordered.parallel is/might be faster but that is especially the case for more difficult calculation per iteration of the stream
     private static void demoUnorderedSequential() {
         System.out.printf("%10s", "Serial: ");
         long startTime = System.nanoTime();
-        List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15).stream().unordered().peek(n -> {
+        Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15).unordered().peek(n -> {
             try {
                 Thread.sleep(n);
             } catch (InterruptedException e) {
@@ -48,7 +48,7 @@ public class UnorderedSequentialVsParallel {
     private static void demoUnorderedParallel() {
         System.out.printf("%10s", "Parallel: ");
         long startTime = System.nanoTime();
-        List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15).stream().unordered().parallel().peek(n -> {
+        Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15).unordered().parallel().peek(n -> {
             try {
                 Thread.sleep(n);
             } catch (InterruptedException e) {
