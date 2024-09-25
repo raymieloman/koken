@@ -15,7 +15,7 @@ public class KitchenBuilderTest {
         Kitchen kitchen = kitchenBuilder.build();
         Assertions.assertEquals("gasfornuisName", kitchen.getGasfornuis());
         Assertions.assertEquals(Color.BLUE, kitchen.getColor());
-        Assertions.assertEquals("Husqvarna", kitchen.getKookstel());
+        Assertions.assertEquals("Husqvarna", kitchen.getKookstel().getName());
 
         // fluent api
         Kitchen anotherKitchen = new Kitchen.KitchenBuilder("aap").kookstel("noot").color(Color.RED).build();
