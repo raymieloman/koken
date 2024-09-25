@@ -10,7 +10,7 @@ import java.awt.*;
 public class Kitchen {
 
     private String gasfornuis;
-    private String kookstel;
+    private Kookstel kookstel;
     private Color color;
 
     private Kitchen(KitchenBuilder builder) {
@@ -21,7 +21,7 @@ public class Kitchen {
 
     public static class KitchenBuilder {
         private final String gasfornuis;
-        private String kookstel;
+        private Kookstel kookstel;
         private Color color;
 
         public KitchenBuilder(String gasfornuis) {
@@ -29,7 +29,7 @@ public class Kitchen {
         }
 
         public KitchenBuilder kookstel(String kookstel) {
-            this.kookstel = kookstel;
+            this.kookstel = new Kookstel(kookstel);
             return this;
         }
 
@@ -42,4 +42,13 @@ public class Kitchen {
             return new Kitchen(this);
         }
     }
+}
+
+@Data
+class Kookstel {
+
+    public Kookstel(String kookstel) {
+        this.name = kookstel;
+    }
+    private String name;
 }
