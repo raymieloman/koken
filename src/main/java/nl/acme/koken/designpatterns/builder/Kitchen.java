@@ -1,4 +1,4 @@
-package nl.acme.koken.builder;
+package nl.acme.koken.designpatterns.builder;
 
 import lombok.Data;
 import lombok.ToString;

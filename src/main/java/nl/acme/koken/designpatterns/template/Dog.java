@@ -1,4 +1,4 @@
-package nl.acme.koken.template;
+package nl.acme.koken.designpatterns.template;
 
 public class Dog extends Animal {
     @Override

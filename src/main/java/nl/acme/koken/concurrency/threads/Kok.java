@@ -1,4 +1,4 @@
-package nl.acme.koken.threads;
+package nl.acme.koken.concurrency.threads;
 
 public class Kok extends Person implements Runnable {
 

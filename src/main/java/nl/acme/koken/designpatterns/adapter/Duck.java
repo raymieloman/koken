@@ -1,4 +1,4 @@
-package nl.acme.koken.adapter;
+package nl.acme.koken.designpatterns.adapter;
 
 public interface Duck {
     void walk();

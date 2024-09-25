@@ -1,4 +1,4 @@
-package nl.acme.koken.builder;
+package nl.acme.koken.designpatterns.builder;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

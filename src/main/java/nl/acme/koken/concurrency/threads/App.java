@@ -1,4 +1,4 @@
-package nl.acme.koken.threads;
+package nl.acme.koken.concurrency.threads;
 
 public class App {
     public static void main(String[] args) throws InterruptedException {

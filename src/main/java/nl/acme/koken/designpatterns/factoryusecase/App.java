@@ -1,4 +1,4 @@
-package nl.acme.koken.factoryusecase;
+package nl.acme.koken.designpatterns.factoryusecase;
 
 import nl.acme.koken.model.Ingredient;
 import nl.acme.koken.model.IngredientFactory;
