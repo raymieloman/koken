@@ -1,4 +1,4 @@
-package nl.acme.koken.bakkerij;
+package nl.acme.koken.concurrency.bakkerij;
 
 import lombok.AllArgsConstructor;
 
