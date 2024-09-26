@@ -6,6 +6,8 @@ public class App {
 
         Fruitmand fruitmand = new Fruitmand();
         fruitmand.add(new Apple());
+        fruitmand.add(new Peach());
+        fruitmand.add(new Apple());
         fruitmand.add(new Banana());
 
         Visitor visitor = new FruitCountingVisitor();

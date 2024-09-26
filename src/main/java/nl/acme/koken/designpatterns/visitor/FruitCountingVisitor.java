@@ -6,6 +6,7 @@ import lombok.ToString;
 public class FruitCountingVisitor implements  Visitor {
     private int apples;
     private int bananas;
+    private int peaches;
 
     @Override
     public void visit(Fruitmand mand) {
@@ -22,5 +23,10 @@ public class FruitCountingVisitor implements  Visitor {
     @Override
     public void visit(Banana banana) {
         bananas++;
+    }
+
+    @Override
+    public void visit(Peach peach) {
+        peaches++;
     }
 }
