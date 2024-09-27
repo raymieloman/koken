@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 
 public class App {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         final Voorraad voorraad = new Voorraad();
 
         try (ExecutorService executorService = Executors.newFixedThreadPool(100)) {

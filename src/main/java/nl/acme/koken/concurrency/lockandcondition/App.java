@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 public class App {
     private static final int POOL_SIZE = 10;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         BoundedBuffer buffer = new BoundedBuffer();
 
         try (ExecutorService executorService = Executors.newFixedThreadPool(POOL_SIZE)) {

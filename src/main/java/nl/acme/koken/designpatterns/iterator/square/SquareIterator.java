@@ -3,7 +3,7 @@ package nl.acme.koken.designpatterns.iterator.square;
 import java.util.Iterator;
 
 public class SquareIterator implements Iterator<Integer> {
-    private int max;
+    private final int max;
     private int current;
 
     public SquareIterator(int min, int max) {
