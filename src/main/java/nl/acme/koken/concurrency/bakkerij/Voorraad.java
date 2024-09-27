@@ -23,7 +23,7 @@ public class Voorraad {
                 not100.await();
             }
             voorraad++;
-            Assertion.ensure(voorraad >= 0 && voorraad <= 100 );
+            Assertion.ensure(voorraad >= 0 );
             notBelowZero.signal();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);

@@ -4,8 +4,6 @@ import nl.acme.koken.assertion.Assertion;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
 
 public class App {
 
