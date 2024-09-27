@@ -1,6 +1,5 @@
 package nl.acme.koken.nio2.visitor;
 
-import lombok.Data;
 import lombok.ToString;
 
 import java.nio.file.FileVisitResult;
@@ -15,13 +14,13 @@ public class NotSourceRelatedFilesVisitor extends SimpleFileVisitor<Path> {
     public static final String REGEX = "\\.git|target|\\.idea|\\.java";
 
     private int fileCounter;
-    private int size;
+    private long size;
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
         Pattern pattern = Pattern.compile(REGEX);
         Matcher matcher = pattern.matcher(file.toFile().getAbsolutePath());
-        if (!matcher.find()) { // find is a occurrence in the String, matches is an exact match. Hence it's name! :-)
+        if (!matcher.find()) { // find is an occurrence in the String, matches is an exact match. Hence, it's name! :-)
             fileCounter++;
             size += file.toFile().length();
         }

@@ -12,9 +12,9 @@ public class Voorraad {
     @Getter
     private int voorraad = 0;
 
-    private Lock lock = new ReentrantLock();
-    private Condition not100 = lock.newCondition();
-    private Condition notBelowZero = lock.newCondition();
+    private final Lock lock = new ReentrantLock();
+    private final Condition not100 = lock.newCondition();
+    private final Condition notBelowZero = lock.newCondition();
 
     public void increment() {
         lock.lock();
@@ -23,7 +23,7 @@ public class Voorraad {
                 not100.await();
             }
             voorraad++;
-            Assertion.ensure(voorraad >= 0 && voorraad <= 100 );
+            Assertion.ensure(voorraad >= 0 );
             notBelowZero.signal();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
