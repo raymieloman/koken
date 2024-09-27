@@ -1,12 +1,13 @@
 package nl.acme.koken.recursion.datastructures.trees;
 
-public class Tree <T extends Comparable> {
+public class Tree <T extends Comparable<T>> {
 
     private T value;
     private Tree<T> left;
     private Tree<T> right;
 
     public void put(T t) {
+        if(t == null) return;
         if(value == null) {
             value = t;
             left = new Tree<>();

@@ -2,7 +2,6 @@ package nl.acme.koken.concurrency.lockandcondition;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 public class App {
     private static final int POOL_SIZE = 10;
@@ -28,8 +27,6 @@ public class App {
                     }
                 });
             }
-            executorService.shutdown();
-            executorService.awaitTermination(10, TimeUnit.SECONDS);
         }
     }
 }
