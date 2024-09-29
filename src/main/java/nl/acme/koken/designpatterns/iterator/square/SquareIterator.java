@@ -5,6 +5,7 @@ import java.util.Iterator;
 public class SquareIterator implements Iterator<Integer> {
     private final int max;
     private int current;
+    private int poedel;
 
     public SquareIterator(int min, int max) {
         this.max = max;
